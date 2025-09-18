@@ -1,0 +1,12 @@
+.user-login {
+    display: flex;
+    align-items: center;
+    column-gap: toRem($gap-s);
+    padding-left: toRem($gap-s);
+    // .user-login__name
+
+    &__name {
+        font-size: toRem(18);
+        font-weight: 600;
+    }
+}

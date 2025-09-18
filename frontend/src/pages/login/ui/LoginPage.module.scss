@@ -1,0 +1,26 @@
+.login {
+
+    // .login__form
+
+    &__form {}
+
+    // .login__create-user
+    &__create-user {
+        align-self: flex-start;
+        margin-top: toRem($gap-m);
+
+        a {
+            width: fit-content;
+            color: var(--grey);
+            transition: color var(--duration) var(--ease);
+
+            @include hover {
+                color: var(--dark);
+            }
+        }
+    }
+
+    button {
+        text-transform: uppercase;
+    }
+}

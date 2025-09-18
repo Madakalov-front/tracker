@@ -1,0 +1,25 @@
+.avatar-user {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: toRem(40);
+    height: toRem(40);
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--grey-100);
+    // .avatar-user__img
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    // .avatar-user__char
+
+    &__char {
+        font-size: toRem(18);
+        font-weight: 600;
+    }
+}

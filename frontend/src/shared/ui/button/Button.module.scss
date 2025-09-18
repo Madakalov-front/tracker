@@ -1,0 +1,21 @@
+.btn {
+    min-height: toRem(40);
+    font-size: toRem(16);
+    font-weight: 500;
+    padding-block: toRem(9);
+    padding-inline: toRem(12);
+    border-radius: toRem($brdr-s);
+    transition-property: background-color, color, border-color;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--ease);
+    text-transform: uppercase;
+    width: 100%;
+    &--default {
+        border: $border;
+        @include hover {
+            border-color: var(--dark);
+            background-color: var(--dark);
+            color: var(--light);
+        }
+    }
+}

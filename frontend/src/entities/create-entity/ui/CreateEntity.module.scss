@@ -1,0 +1,29 @@
+.add-task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: toRem($brdr-s);
+    background-color: var(--grey-100);
+    padding-block: toRem(10);
+    max-height: toRem(40);
+    padding-inline: toRem(13);
+    transition-property: color, background-color, transform;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--ease);
+    column-gap: toRem(4);
+    font-weight: 500;
+
+    @include hover {
+        color: var(--light);
+        background-color: var(--dark);
+        transform: translateY(toRem(-2));
+    }
+
+    // .add-task__svg
+
+    &__svg {
+        width: toRem(14);
+        height: toRem(14);
+        fill: currentColor;
+    }
+}

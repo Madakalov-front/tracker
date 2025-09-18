@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+    font: inherit;
+    font-size: initial;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+html {
+    font-size: toRem(16);
+
+    @include MQmin($laptop) {
+        font-size: 0.8333vw;
+    }
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr;
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    color: var(--dark);
+
+    &:has(header, footer) {
+        grid-template-rows: auto 1fr auto;
+    }
+}
+
+a,
+img {
+    display: block;
+}
+
+input,
+button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: toRem(48);
+    font-weight: 700;
+    margin-bottom: toRem(22);
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type="search"] {
+    -webkit-appearance: none;
+    appearance: none;
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    &::-ms-clear,
+    &::-ms-reveal {
+        display: none;
+    }
+}
+
+.container {
+    padding-inline: toRem(20);
+    width: 100%;
+    height: 100%;
+    @include MQmin($tablet-xl) {
+        padding-inline: toRem(85);
+    }
+
+    @include MQmin($mobile-xl) {
+        padding-inline: toRem(40);
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+
+
+.form-container {
+    max-width: toRem(560);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(5%);
+    animation: showLoginForm var(--duration) var(--ease) calc(var(--duration) / 2) 1 forwards;
+    margin: 0 auto;
+    &>form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        row-gap: toRem($gap-s);
+        width: 100%;
+        padding: toRem(30) toRem(20);
+        border: $border;
+        border-radius: toRem($brdr-s);
+        box-shadow: 0 0 toRem(25) toRem(1) var(--grey-100);
+    }
+}
+
+@keyframes showLoginForm {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,13 @@
+.back-home {
+    position: absolute;
+    top: toRem(50);
+    left: toRem(50);
+    font-size: toRem(14);
+    text-transform: uppercase;
+    color: var(--grey);
+    transition: color var(--duration) var(--ease); 
+    font-weight: 600;
+    @include hover {
+        color: var(--dark);
+    }
+}

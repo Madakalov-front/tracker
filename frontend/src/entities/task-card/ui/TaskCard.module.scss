@@ -1,0 +1,85 @@
+.taskCard {
+  border: 0.1rem solid var(--grey-300);
+  border-radius: 1rem;
+  background: var(--light);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.delete {
+  border: none;
+  background: transparent;
+  font-size: 1.8rem;
+  color: var(--red-500);
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--red-700);
+  }
+}
+
+.body {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.priority {
+  padding: 0.4rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+
+  &--low {
+    background: var(--green-100);
+    color: var(--green-700);
+  }
+
+  &--medium {
+    background: var(--yellow-100);
+    color: var(--yellow-700);
+  }
+
+  &--high {
+    background: var(--red-100);
+    color: var(--red-700);
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--grey-600);
+}
+
+.assignee {
+  font-weight: 500;
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+}

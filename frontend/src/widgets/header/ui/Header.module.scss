@@ -1,0 +1,24 @@
+.header {
+    padding-block: toRem(25);
+    border-bottom: $border;
+    margin-bottom: toRem(40);
+    // .header__inner
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: toRem($gap-l);
+    }
+
+    // .header__actions
+    &__actions {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: toRem($gap-m);
+        button {
+            width: fit-content;
+        }
+    }
+}

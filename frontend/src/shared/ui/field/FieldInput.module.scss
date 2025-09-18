@@ -1,0 +1,56 @@
+.field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: toRem($gap-s);
+    margin-bottom: toRem(20);
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        font-size: toRem(18);
+        color: var(--dark);
+        row-gap: toRem($gap-s);
+    }
+
+    &__input {
+        width: 100%;
+        padding: toRem($gap-m);
+        border: $border;
+        border-radius: toRem($brdr-s);
+        font-size: toRem(16);
+        transition: border-color var(--duration) var(--ease);
+
+        &:focus {
+            border-color: var(--dark);
+            outline: none;
+        }
+
+        @include hover {
+            border-color: var(--dark);
+        }
+    }
+
+    & textarea {
+        resize: none;
+        height: toRem(150);
+    }
+
+    &__error {
+        position: absolute;
+        top: calc(100% + toRem(2));
+        left: 0;
+        font-size: toRem(12);
+        line-height: 1.2;
+        color: var(--error);
+
+        opacity: 0;
+        transform: translateY(toRem(4));
+        transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease);
+
+        .field:has(&) & {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

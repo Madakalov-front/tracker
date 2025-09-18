@@ -1,0 +1,12 @@
+$brdr-s: 6;
+$gap-s: 8;
+$gap-m: 12;
+$gap-l: 24;
+
+$border: 0.0625rem solid var(--grey);
+
+:root {
+    --loader-small: 20px;
+    --loader-medium: 40px;
+    --loader-large: 64px;
+}

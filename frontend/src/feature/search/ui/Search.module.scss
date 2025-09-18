@@ -1,0 +1,8 @@
+.field-search {
+    transition: flex-grow calc(var(--duration) * 2) var(--ease);
+    flex-grow: initial;
+    max-width: toRem(550);
+    &:has(:focus) {
+        flex-grow: 1;
+    }
+}

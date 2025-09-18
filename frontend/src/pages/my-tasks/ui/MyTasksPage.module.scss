@@ -1,0 +1,27 @@
+.grid-tasks {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-block: toRem(40);
+    column-gap: toRem($gap-l);
+    margin-top: toRem(40);
+    // .grid-tasks__item 
+    &__item {
+        display: grid;
+        grid-template-columns: repeat(1fr);
+        row-gap: toRem($gap-m);
+        border: $border;
+        padding: toRem($gap-l);
+        border-radius: toRem($brdr-s);
+        position: relative;
+        &::before {
+            content: attr(data-status);
+            position: absolute;
+            bottom: calc(100% + toRem(10));
+            left: 0;
+            color: var(--grey);
+            font-size: toRem(18);
+            text-transform: uppercase;
+        }
+    }
+}
