@@ -1,23 +1,17 @@
-# Используем официальный Node.js образ
 FROM node:22
-
-# Рабочая директория
 WORKDIR /usr/src/app
 
-# Копируем package.json и lock-файл отдельно (чтобы кешировались зависимости)
+# Копируем package.json и lock-файл отдельно
 COPY package*.json ./
 
-# Устанавливаем зависимости
-RUN npm install
+# Устанавливаем только production зависимости
+RUN npm install --omit=dev
 
 # Копируем весь проект
 COPY . .
 
-# Собираем TypeScript → dist
+# Сборка TypeScript
 RUN npm run build
 
-# Пробрасываем порт
 EXPOSE 5000
-
-# Запуск приложения
-CMD ["npm", "start"]
+CMD ["node", "dist/server.js"]

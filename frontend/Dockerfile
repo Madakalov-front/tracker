@@ -11,8 +11,6 @@ RUN npm run build
 # Stage 2: nginx
 FROM nginx:alpine
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
-
-# nginx конфиг (для проксирования API)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
